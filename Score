@@ -1,0 +1,48 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+struct chengji
+{
+	double xh;
+	double yw;
+	double sx;
+	double yy;
+	double wl;
+	double hx;
+	double sw;
+	double sum;
+}cj[80];
+int main()
+{
+	int n, i;
+	cin >> n;
+	double yws, sxs, yys, wls, hxs, sws, sums;
+	double ywa, sxa, yya, wla, hxa, swa;
+	yws = sxs = yys = wls = hxs = sws = sums = 0;
+	for (i = 0; i < n; i++)
+	{
+		cin >> cj[i].xh >> cj[i].yw >> cj[i].sx >> cj[i].yy >> cj[i].wl >> cj[i].hx >> cj[i].sw;
+		cj[i].sum = cj[i].yw + cj[i].sx + cj[i].yy + cj[i].wl + cj[i].hx + cj[i].sw;
+	}
+	for (i = 0; i < n; i++)
+	{
+		yws = yws + cj[i].yw;
+		sxs = sxs + cj[i].sx;
+		yys = yys + cj[i].yy;
+		wls = wls + cj[i].wl;
+		hxs = hxs + cj[i].hx;
+		sws = sws + cj[i].sw;
+	}
+	ywa = yws / n;
+	sxa = sxs / n;
+	yya = yys / n;
+	wla = wls / n;
+	hxa = hxs / n;
+	swa = sws / n;
+	for (i = 0; i < n; i++)
+	{
+		cout << cj[i].xh << " " << cj[i].yw << " " << cj[i].sx << " " << cj[i].yy << " " << cj[i].wl << " " << cj[i].hx << " " << cj[i].sw << " " << cj[i].sum << endl;
+	}
+	cout << fixed << setprecision(1) << ywa << " " << sxa << " " << yya << " " << wla << " " << hxa << " " << swa << endl;
+	return 0;
+}
